@@ -16,9 +16,8 @@ to do:
 -fix alerts
 -publish on fire base
 
-// window.alert = function () { };
 
-  // "homepage": "https://elisecarman.github.io/SnarkFrontend/",
+// "homepage": "https://elisecarman.github.io/SnarkFrontend/",
 
 
 

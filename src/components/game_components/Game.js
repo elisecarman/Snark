@@ -1035,7 +1035,8 @@ export default class Game extends Component {
             
             { (this.props.loggedOut === true) ?
             <div>
-                <Navigate to="/SnarkFrontend/"></Navigate>
+                {/* DOMAIN */}
+                <Navigate to="/"></Navigate>
             </div>
             :
             <div  >
