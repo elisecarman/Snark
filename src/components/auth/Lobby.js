@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import Game from '../game_components/Game';
-import { useChatContext } from 'stream-chat-react';
+// import { useChatContext } from 'stream-chat-react';
 
 function Lobby({channel}) {
 const [playersJoined, setPlayersJoined] = useState(channel.state.watcher_count === 2);
-const {client} = useChatContext();
+// const {client} = useChatContext();
 
 channel.on("user.watching.start", async (event) => {
     setPlayersJoined(event.watcher_count === 2);

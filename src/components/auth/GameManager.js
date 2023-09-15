@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import { useChatContext, Channel } from 'stream-chat-react';
+// import { useChatContext, Channel } from 'stream-chat-react';
 import Lobby from './Lobby';
 
 function GameManager() {
     const [rivalUsername, setRivalUsername] = useState("")
   
-    const {client} = useChatContext();
+    // const {client} = useChatContext();
     const [channel, setChannel] = useState(null);
 
     const createChannel = async () => {
@@ -15,17 +15,17 @@ function GameManager() {
         //     return;
         // }
 
-        const newChannel = await client.channel("messaging",rivalUsername,{
-            members: [client.userID], //, response.users[0].id
-            player1: client.userID
-        }) 
+        // const newChannel = await client.channel("messaging",rivalUsername,{
+        //     members: [client.userID], //, response.users[0].id
+        //     player1: client.userID
+        // }) 
 
-        await newChannel.watch();
-        setChannel(newChannel);
+        // await newChannel.watch();
+        // setChannel(newChannel);
     }
   return (
     <>
-    {
+    {/* {
     channel ?
     (<Channel channel={channel}>
     <Lobby channel={channel}/>
@@ -45,7 +45,7 @@ function GameManager() {
         <button onClick={createChannel}>Create Game</button>
 
     </div>)
-    }
+    } */}
       </>
   );
       

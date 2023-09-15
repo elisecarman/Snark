@@ -11,9 +11,8 @@ import Game from './components/game_components/Game';
 import GameWrapper from './components/game_components/GameWrapper';
 import Login from './components/auth/Login';
 import SignUp from './components/auth/SignUp';
-import { StreamChat } from 'stream-chat';
+// import { StreamChat } from 'stream-chat';
 import Cookies from 'universal-cookie';
-import GameManager from './components/auth/GameManager';
 import { ChakraProvider } from '@chakra-ui/react'
 
 
@@ -35,7 +34,7 @@ function App() {
   const cookies = new Cookies();
 
   const token = cookies.get("token");
-  const client = StreamChat.getInstance(api_key);
+  // const client = StreamChat.getInstance(api_key);
 
   const [isAuth, setIsAuth] = useState(false);
 
@@ -47,21 +46,21 @@ function App() {
     cookies.remove("hashedPassword");
     cookies.remove("channelName");
     cookies.remove("username");
-    client.disconnectUser();
+    // client.disconnectUser();
     setIsAuth(false);
   }
 
   if (token){
-    client.connectUser({
-      id: cookies.get("userId"),
-      name: cookies.get("username"),
-      firstName: cookies.get("firstName"),
-      lastName: cookies.get("lastName"),
-      hashedPassword: cookies.get("hashedPassword"),
-    }, 
-    token).then((user)=>{
-      setIsAuth(true);
-    })
+    // client.connectUser({
+    //   id: cookies.get("userId"),
+    //   name: cookies.get("username"),
+    //   firstName: cookies.get("firstName"),
+    //   lastName: cookies.get("lastName"),
+    //   hashedPassword: cookies.get("hashedPassword"),
+    // }, 
+    // token).then((user)=>{
+    //   setIsAuth(true);
+    // })
   }
 
   const isCreator = cookies.get("isCreator") !== undefined
